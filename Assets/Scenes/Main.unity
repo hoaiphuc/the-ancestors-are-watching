@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 679261332}
   - component: {fileID: 679261331}
   - component: {fileID: 679261330}
+  - component: {fileID: 679261333}
   m_Layer: 0
   m_Name: Kin
   m_TagString: Untagged
@@ -341,7 +342,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: dbd352a867741fb4a8820bdd3ae62ac0, type: 3}
+  m_Sprite: {fileID: 1632040586798468693, guid: 06e0b01264c2d5240b2a864b101e99d6, type: 3}
   m_Color: {r: 0.95, g: 0.85, b: 0.6, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -366,6 +367,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &679261333
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679261329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b39ae923b013dc43a1a91c7c081c1aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &956027670
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +611,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1549057471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549057473}
+  - component: {fileID: 1549057472}
+  m_Layer: 0
+  m_Name: 'ClickStriker '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1549057472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549057471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d6c7990b9eb72469098bf882164cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AncestorsWatching.ClickStriker
+  gameCamera: {fileID: 260182744}
+  clickDamage: 10
+--- !u!4 &1549057473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549057471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.96815, y: 2.53558, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653239821
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,3 +809,4 @@ SceneRoots:
   - {fileID: 679261332}
   - {fileID: 1048812101}
   - {fileID: 1653239823}
+  - {fileID: 1549057473}
