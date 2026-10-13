@@ -29,6 +29,9 @@ namespace AncestorsWatching
         private float runTime;
         private float timer;
 
+        public event System.Action<Enemy, double> EnemyDamaged;
+
+
         private void Awake()
         {
             pool = new ObjectPool<Enemy>(
@@ -108,14 +111,18 @@ namespace AncestorsWatching
             var enemy = Instantiate(enemyPrefab, transform);
             // Subscribed once per instance, since a pooled enemy lives through many lives.
             enemy.Finished += OnEnemyFinished;
+            enemy.Damaged += OnEnemyDamaged;
             return enemy;
         }
 
         private void DestroyEnemy(Enemy enemy)
         {
             enemy.Finished -= OnEnemyFinished;
+            enemy.Damaged -= OnEnemyDamaged;
             Destroy(enemy.gameObject);
         }
+
+        private void OnEnemyDamaged(Enemy enemy, double amount) => EnemyDamaged?.Invoke(enemy, amount);
 
         private void OnEnemyFinished(Enemy enemy)
         {

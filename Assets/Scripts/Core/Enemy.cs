@@ -25,6 +25,8 @@ namespace AncestorsWatching
         /// <summary>Left the field for any reason (killed or reached the Kin). The pool listens to this.</summary>
         public event Action<Enemy> Finished;
 
+        public event Action<Enemy, double> Damaged;
+
         private void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
         /// <summary>Pooled objects are reused, so all per-life state is reset here, not in Awake.</summary>
@@ -54,6 +56,7 @@ namespace AncestorsWatching
             if (finished) return;
 
             health -= amount;
+            Damaged?.Invoke(this, amount);
             if (health > 0) return;
 
             Died?.Invoke(this);

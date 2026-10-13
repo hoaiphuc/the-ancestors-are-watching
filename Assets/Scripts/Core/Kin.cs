@@ -63,13 +63,5 @@ namespace AncestorsWatching
                 BreakthroughReady?.Invoke();
             }
         }
-
-        // Temporary: lets us watch the Health bar move before enemies exist.
-        [ContextMenu("Debug: Take 10 Damage")]
-        private void DebugTakeDamage() => TakeDamage(10);
-
-        // Temporary: with a 1 HP start, damage tests need some health to lose first.
-        [ContextMenu("Debug: Heal 50")]
-        private void DebugHeal() => SetHealth(Health + 50);
     }
 }
