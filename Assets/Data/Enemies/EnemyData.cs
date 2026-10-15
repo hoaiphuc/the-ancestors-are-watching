@@ -12,6 +12,7 @@ namespace AncestorsWatching
         [SerializeField] private double maxHealth = 10;
         [SerializeField] private float moveSpeed = 1.5f;
         [SerializeField] private double contactDamage = 5;
+        [SerializeField] private double spiritStoneReward = 1.0f;
 
         // Optional: leave the sprite empty to keep whatever the prefab uses.
         [SerializeField] private Sprite sprite;
@@ -21,6 +22,7 @@ namespace AncestorsWatching
         public double MaxHealth => maxHealth;
         public float MoveSpeed => moveSpeed;
         public double ContactDamage => contactDamage;
+        public double SpiritStoneReward => spiritStoneReward;
         public Sprite Sprite => sprite;
         public Color Tint => tint;
     }

@@ -19,6 +19,7 @@ namespace AncestorsWatching
         private double health;
         private bool finished;
 
+        public EnemyData Data => data;
         /// <summary>Killed by the player. Used later for Spirit Stone drops.</summary>
         public event Action<Enemy> Died;
 

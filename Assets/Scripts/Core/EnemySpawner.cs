@@ -30,6 +30,8 @@ namespace AncestorsWatching
         private float timer;
 
         public event System.Action<Enemy, double> EnemyDamaged;
+        public event System.Action<Enemy> EnemyDied;
+
 
 
         private void Awake()
@@ -109,9 +111,9 @@ namespace AncestorsWatching
         private Enemy CreateEnemy()
         {
             var enemy = Instantiate(enemyPrefab, transform);
-            // Subscribed once per instance, since a pooled enemy lives through many lives.
             enemy.Finished += OnEnemyFinished;
             enemy.Damaged += OnEnemyDamaged;
+            enemy.Died += OnEnemyDied;
             return enemy;
         }
 
@@ -119,6 +121,7 @@ namespace AncestorsWatching
         {
             enemy.Finished -= OnEnemyFinished;
             enemy.Damaged -= OnEnemyDamaged;
+            enemy.Died -= OnEnemyDied;
             Destroy(enemy.gameObject);
         }
 
@@ -129,5 +132,8 @@ namespace AncestorsWatching
             active.Remove(enemy);
             pool.Release(enemy);
         }
+
+        private void OnEnemyDied(Enemy enemy) => EnemyDied?.Invoke(enemy);
+
     }
 }
